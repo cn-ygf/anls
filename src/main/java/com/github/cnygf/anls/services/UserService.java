@@ -18,4 +18,5 @@ public interface UserService extends IService<User> {
      * @return 密码
      */
     String getPasswordByUserName(String userName);
+
 }

@@ -22,6 +22,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      */
     @Override
     public String getPasswordByUserName(String userName){
-        return this.lambdaQuery().eq(User::getUsername,userName).one().getPassword();
+        User user = this.lambdaQuery().eq(User::getUsername,userName).one();
+        if(user == null){
+            return "";
+        }
+        return user.getPassword();
     }
+
 }
