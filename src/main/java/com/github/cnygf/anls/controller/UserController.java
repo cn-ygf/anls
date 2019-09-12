@@ -1,6 +1,7 @@
 package com.github.cnygf.anls.controller;
 
 import com.github.cnygf.anls.mapper.UserMapper;
+import com.github.cnygf.anls.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,8 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
+    /**
+     * 用户业务
+     */
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
 
     /**
      * 登录
@@ -28,7 +32,8 @@ public class UserController {
     @RequestMapping(value = "/api/login",method = RequestMethod.POST)
     @ResponseBody
     public String login(String username,String password,String vfcode){
-        System.out.println(username);
+        String result = userService.getPasswordByUserName("ygf");
+        System.out.println(result);
         return "Hello 安d络";
     }
 

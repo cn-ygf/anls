@@ -1,5 +1,6 @@
 package com.github.cnygf.anls.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 
@@ -10,6 +11,7 @@ import lombok.Data;
  * @since 2019-09-12
  */
 @Data
+@TableName("al_user")
 public class User {
     /**
      * 用户编号
@@ -18,11 +20,11 @@ public class User {
     /**
      * 用户名
      */
-    private String userName;
+    private String username;
     /**
      * 用户密码
      */
-    private String passWord;
+    private String password;
     /**
      * 姓名
      */

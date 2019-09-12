@@ -12,4 +12,10 @@ import com.github.cnygf.anls.entity.User;
  */
 public interface UserService extends IService<User> {
 
+    /**
+     * 根据用户名获取密码
+     * @param userName 用户名
+     * @return 密码
+     */
+    String getPasswordByUserName(String userName);
 }
