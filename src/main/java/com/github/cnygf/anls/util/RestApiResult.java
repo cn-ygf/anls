@@ -26,18 +26,13 @@ public class RestApiResult  {
      */
     private String msg;
     /**
+     * 数据条数
+     */
+    private int count;
+    /**
      * 返回数据
      */
-    private Map<String,String>data;
-
-    /**
-     * 设置返回对象的数据
-     * @param key 键
-     * @param values 值
-     */
-    public void setData(String key,String values){
-        this.data.put(key,values);
-    }
+    private Object data;
 
     /**
      * 创建API返回对象
@@ -50,7 +45,6 @@ public class RestApiResult  {
         r.setCode(code);
         r.setStatus(status);
         r.setMsg(msg);
-        r.data = new HashMap<String,String>();
         return r;
     }
 }

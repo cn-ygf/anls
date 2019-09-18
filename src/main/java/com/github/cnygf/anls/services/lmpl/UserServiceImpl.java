@@ -15,6 +15,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
+
+    /**
+     * 根据用户名获取用户实体
+     * @param userName 用户名
+     * @return 用户实体
+     */
+    @Override
+    public User getByUserName(String userName){
+        return this.lambdaQuery().eq(User::getUsername,userName).one();
+    }
+
     /**
      * 根据用户名获取用户密码
      * @param userName 用户名
